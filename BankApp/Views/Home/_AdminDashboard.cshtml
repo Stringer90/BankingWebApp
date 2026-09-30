@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div id="admin-dashboard" class="container mt-4">
+    <h1 class="mb-4">Admin Dashboard</h1>
+
+    <div class="row mb-4">
+        <div class="col">
+            <button id="edit-admin-profile" class="btn btn-secondary">Edit My Account</button>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <div class="input-group">
+                <input type="text" id="user-search" class="form-control" placeholder="Search for username">
+                <div class="input-group-append">
+                    <button id="search-users" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="user-info" class="row mb-4">
+        <!-- User details will be dynamically inserted here -->
+    </div>
+
+    <div id="accounts-list" class="row mb-4">
+        <!-- User accounts will be dynamically inserted here -->
+    </div>
+
+    <div id="transactions-view" class="row mb-4" style="display: none;">
+        <div class="col">
+            <h3>Account Transactions</h3>
+            <div id="transactions-list">
+                <!-- Transaction details will be dynamically inserted here -->
+            </div>
+            <button id="back-to-accounts" class="btn btn-secondary mt-3">Back to Accounts</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // This script ensures that the handlers are attached when the partial view is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        if (typeof attachAdminDashboardHandlers === 'function') {
+            attachAdminDashboardHandlers();
+        } else {
+            console.error('attachAdminDashboardHandlers function not found. Make sure it\'s defined in your site.js file.');
+        }
+    });
+</script>

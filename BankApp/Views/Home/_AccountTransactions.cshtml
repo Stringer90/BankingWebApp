@@ -1,0 +1,30 @@
+﻿_accountTransactions.cshtml
+<div id="account-transactions-view">
+    <h2>Account Number: <span id="current-account-number"></span></h2>
+    <h3>Balance: $<span id="current-account-balance"></span></h3>
+
+    <div class="mb-3">
+        <label for="start-date">From:</label>
+        <input type="date" id="start-date" class="form-control d-inline-block w-auto">
+        <label for="end-date">To:</label>
+        <input type="date" id="end-date" class="form-control d-inline-block w-auto">
+        <button id="filter-transactions" class="btn btn-primary">Filter by Date Range</button>
+        <button id="view-all-transactions" class="btn btn-secondary">View All</button>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>To/From</th>
+                <th>Amount</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody id="transactions-list">
+            <!-- Transactions will be dynamically inserted here -->
+        </tbody>
+    </table>
+
+    <button id="back-to-accounts" class="btn btn-primary">Back to Accounts</button>
+</div>
